@@ -1,0 +1,11 @@
+<!doctype html><html lang="tl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><div class="center-page"><form class="card login" method="post">
+<h1>🔐 Admin Login</h1><p class="lead" style="margin-bottom:6px">Para sa authorized personnel lang po.</p>
+{% if error %}<div class="err">{{ error }}</div>{% endif %}
+<label class="l" for="password">Password</label>
+<input class="f" id="password" type="password" name="password" autofocus required>
+<p><button class="btn btn-gold" style="width:100%;margin-top:14px;background:var(--maroon);color:#fff">Login</button></p>
+<p style="text-align:center"><a href="/">← Bumalik sa chatbot</a></p>
+</form></div></body></html>

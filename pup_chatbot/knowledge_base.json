@@ -1,0 +1,729 @@
+{
+  "_note": "Editable by authorized personnel. Entries with verified=false are SAMPLE answers and must be replaced with approved information before the final demo.",
+  "fallback": "Pasensya na po, hindi ko po nahanap ang sagot dito sa FAQ ko. 😅\nPara sa tamang sagot, mangyari pong lumapit sa {office}.\n\nPuwede rin po ninyong i-rephrase ang tanong, o i-click ang isa sa mga topic buttons sa baba.",
+  "fallback_offices": {
+    "enroll": "Registrar's Office o sa inyong Department/Program Chair",
+    "grade": "Registrar's Office o sa inyong subject instructor",
+    "subject": "Department/Program Chair ng IT",
+    "office": "Office of the Dean o Department Office",
+    "default": "Registrar's Office o Department Office ng IT"
+  },
+  "stopwords": [
+    "po",
+    "ba",
+    "ang",
+    "ng",
+    "sa",
+    "na",
+    "ko",
+    "ako",
+    "mo",
+    "ay",
+    "naman",
+    "lang",
+    "din",
+    "rin",
+    "ito",
+    "yung",
+    "yong",
+    "mga",
+    "the",
+    "is",
+    "are",
+    "of",
+    "to",
+    "a",
+    "an",
+    "do",
+    "does",
+    "i",
+    "my",
+    "can",
+    "me",
+    "please",
+    "pls",
+    "paki",
+    "pwede",
+    "puwede",
+    "tungkol",
+    "about",
+    "for",
+    "and",
+    "at",
+    "o",
+    "or",
+    "in",
+    "on",
+    "what",
+    "ano",
+    "anong",
+    "nang",
+    "may",
+    "meron",
+    "there",
+    "you",
+    "your",
+    "it",
+    "be"
+  ],
+  "phrases": {
+    "how much": "cost",
+    "magkano": "cost",
+    "what time": "hours",
+    "anong oras": "hours",
+    "office hours": "office hours",
+    "good morning": "greet",
+    "good afternoon": "greet",
+    "good evening": "greet",
+    "magandang umaga": "greet",
+    "magandang hapon": "greet",
+    "magandang gabi": "greet",
+    "thank you": "thanks",
+    "maraming salamat": "thanks",
+    "pre requisite": "prerequisite",
+    "pre req": "prerequisite",
+    "mag enroll": "enroll",
+    "mag drop": "drop",
+    "first year": "firstyear",
+    "1st year": "firstyear",
+    "second year": "secondyear",
+    "2nd year": "secondyear",
+    "third year": "thirdyear",
+    "3rd year": "thirdyear",
+    "fourth year": "fourthyear",
+    "4th year": "fourthyear",
+    "what can you do": "help",
+    "ano kaya mo": "help",
+    "ano ang kaya mo": "help"
+  },
+  "synonyms": {
+    "how": [
+      "paano",
+      "pano",
+      "panu",
+      "how",
+      "procedure",
+      "hakbang",
+      "steps",
+      "step",
+      "process",
+      "proseso"
+    ],
+    "when": [
+      "kailan",
+      "when",
+      "petsa",
+      "date",
+      "schedule of",
+      "magsisimula",
+      "start",
+      "kelan"
+    ],
+    "where": [
+      "saan",
+      "where",
+      "nasaan",
+      "location",
+      "lokasyon"
+    ],
+    "cost": [
+      "cost",
+      "fee",
+      "fees",
+      "bayad",
+      "tuition",
+      "price",
+      "bayaran",
+      "presyo"
+    ],
+    "enroll": [
+      "enroll",
+      "enrol",
+      "enrollment",
+      "enrolment",
+      "magenroll",
+      "magpaenroll",
+      "pagpapatala",
+      "enlist",
+      "enlistment",
+      "magpatala",
+      "registration",
+      "register"
+    ],
+    "deadline": [
+      "deadline",
+      "huling",
+      "cutoff",
+      "cut-off",
+      "last day"
+    ],
+    "requirements": [
+      "requirements",
+      "requirement",
+      "documents",
+      "dokumento",
+      "papeles",
+      "kailangan",
+      "needed",
+      "requirements"
+    ],
+    "late": [
+      "late",
+      "huli",
+      "nahuli",
+      "delayed"
+    ],
+    "prerequisite": [
+      "prerequisite",
+      "prerequisites",
+      "prereq",
+      "prereqs",
+      "kailangan muna"
+    ],
+    "subject": [
+      "subject",
+      "subjects",
+      "course",
+      "courses",
+      "kurso",
+      "asignatura",
+      "sub"
+    ],
+    "curriculum": [
+      "curriculum",
+      "kurikulum",
+      "checklist",
+      "program of study",
+      "roadmap"
+    ],
+    "programming": [
+      "programming",
+      "prog",
+      "coding",
+      "code"
+    ],
+    "database": [
+      "database",
+      "dbms",
+      "sql"
+    ],
+    "networking": [
+      "networking",
+      "network"
+    ],
+    "grade": [
+      "grade",
+      "grades",
+      "grading",
+      "grado",
+      "marka",
+      "marks",
+      "rating"
+    ],
+    "passing": [
+      "passing",
+      "pasado",
+      "pumasa",
+      "pass",
+      "passed",
+      "pasa"
+    ],
+    "scale": [
+      "scale",
+      "system",
+      "sistema",
+      "equivalent"
+    ],
+    "compute": [
+      "compute",
+      "computation",
+      "kompyut",
+      "kuwenta",
+      "gwa",
+      "average",
+      "computing"
+    ],
+    "inc": [
+      "inc",
+      "incomplete"
+    ],
+    "drop": [
+      "drop",
+      "dropping",
+      "drp",
+      "dropped",
+      "withdraw",
+      "withdrawal"
+    ],
+    "office": [
+      "office",
+      "opisina",
+      "tanggapan"
+    ],
+    "hours": [
+      "hours",
+      "oras",
+      "open",
+      "bukas",
+      "sched",
+      "iskedyul",
+      "schedule",
+      "available"
+    ],
+    "registrar": [
+      "registrar",
+      "registrars"
+    ],
+    "dean": [
+      "dean",
+      "dekano"
+    ],
+    "chair": [
+      "chair",
+      "chairperson",
+      "program chair",
+      "head",
+      "department head"
+    ],
+    "consult": [
+      "consult",
+      "consultation",
+      "konsulta",
+      "magpa-consult"
+    ],
+    "greet": [
+      "hi",
+      "hello",
+      "hey",
+      "kumusta",
+      "kamusta",
+      "greet",
+      "helo"
+    ],
+    "thanks": [
+      "thanks",
+      "thank",
+      "salamat",
+      "tnx",
+      "ty"
+    ],
+    "bye": [
+      "bye",
+      "goodbye",
+      "paalam",
+      "ingat"
+    ],
+    "help": [
+      "help",
+      "tulong",
+      "tulungan",
+      "commands",
+      "menu"
+    ],
+    "firstyear": [
+      "firstyear"
+    ],
+    "secondyear": [
+      "secondyear"
+    ],
+    "thirdyear": [
+      "thirdyear"
+    ],
+    "fourthyear": [
+      "fourthyear"
+    ]
+  },
+  "entries": [
+    {
+      "id": "greet",
+      "category": "General",
+      "patterns": [
+        [
+          "greet"
+        ]
+      ],
+      "verified": true,
+      "answer": "Hello po! 👋 Ako po ang PUP Parañaque IT FAQ Bot. Puwede po kayong magtanong tungkol sa enrollment, subject prerequisites, grading, at office schedules. Mag-type lang po ng tanong sa Tagalog, English, o Taglish!"
+    },
+    {
+      "id": "thanks",
+      "category": "General",
+      "patterns": [
+        [
+          "thanks"
+        ]
+      ],
+      "verified": true,
+      "answer": "Walang anuman po! 😊 Kung may iba pa kayong tanong, nandito lang po ako."
+    },
+    {
+      "id": "bye",
+      "category": "General",
+      "patterns": [
+        [
+          "bye"
+        ]
+      ],
+      "verified": true,
+      "answer": "Paalam po at ingat! Balik lang po kapag may tanong ulit."
+    },
+    {
+      "id": "help",
+      "category": "General",
+      "patterns": [
+        [
+          "help"
+        ]
+      ],
+      "verified": true,
+      "answer": "Narito po ang mga kaya kong sagutin:\n• Enrollment (paano, kailan, requirements, late enrollment)\n• Subjects (prerequisites, curriculum)\n• Grading (scale, passing grade, INC, dropping)\n• Office schedules (Registrar, Dean, Program Chair, consultation)\n\nHalimbawa: \"Paano mag-enroll?\" o \"Ano ang passing grade?\""
+    },
+    {
+      "id": "enroll_how",
+      "category": "Enrollment",
+      "patterns": [
+        [
+          "enroll",
+          "how"
+        ]
+      ],
+      "verified": false,
+      "answer": "Paano po mag-enroll (SAMPLE, palitan ng approved steps):\n1. Tingnan ang enrollment announcement sa official page ng campus.\n2. Ihanda ang requirements at i-check ang inyong curriculum checklist.\n3. Sumunod sa enrollment schedule ng inyong year level/section.\n4. I-confirm ang subjects sa Department/Program Chair.\n5. Kumuha ng copy ng inyong enrollment form (COR)."
+    },
+    {
+      "id": "enroll_when",
+      "category": "Enrollment",
+      "patterns": [
+        [
+          "enroll",
+          "when"
+        ],
+        [
+          "when",
+          "deadline"
+        ],
+        [
+          "enroll",
+          "deadline"
+        ],
+        [
+          "deadline"
+        ]
+      ],
+      "verified": false,
+      "answer": "Ang eksaktong enrollment dates ay ina-announce ng campus bawat semester (SAMPLE entry). Pakitingnan po ang official announcements ng PUP Parañaque o magtanong sa Registrar's Office."
+    },
+    {
+      "id": "enroll_req",
+      "category": "Enrollment",
+      "patterns": [
+        [
+          "enroll",
+          "requirements"
+        ],
+        [
+          "requirements"
+        ]
+      ],
+      "verified": false,
+      "answer": "Mga karaniwang requirements po (SAMPLE, i-verify):\n• Dating COR / grades ng nakaraang semester\n• Student ID\n• Curriculum checklist\n• Clearance, kung kailangan\nPara sa kumpletong listahan, mag-confirm po sa Registrar's Office."
+    },
+    {
+      "id": "enroll_late",
+      "category": "Enrollment",
+      "patterns": [
+        [
+          "late",
+          "enroll"
+        ],
+        [
+          "late"
+        ]
+      ],
+      "verified": false,
+      "answer": "Kung nahuli po kayo sa enrollment, makipag-ugnayan agad sa Registrar's Office at sa inyong Program Chair para sa late enrollment policy at kung puwede pa kayong tanggapin (SAMPLE entry)."
+    },
+    {
+      "id": "tuition",
+      "category": "Enrollment",
+      "patterns": [
+        [
+          "cost"
+        ],
+        [
+          "tuition"
+        ]
+      ],
+      "verified": false,
+      "answer": "Tungkol po sa bayarin, i-check ang pinakabagong announcement ng PUP at ng Registrar/Accounting para sa tamang fees at kung kayo ay qualified sa free tuition (SAMPLE entry, i-verify)."
+    },
+    {
+      "id": "prereq_prog",
+      "category": "Subjects",
+      "patterns": [
+        [
+          "prerequisite",
+          "programming"
+        ]
+      ],
+      "verified": false,
+      "answer": "SAMPLE: Karaniwang kailangang pumasa muna sa introductory programming bago kumuha ng susunod na programming subject. Tingnan po ang inyong curriculum checklist para sa tamang prerequisite."
+    },
+    {
+      "id": "prereq_db",
+      "category": "Subjects",
+      "patterns": [
+        [
+          "prerequisite",
+          "database"
+        ]
+      ],
+      "verified": false,
+      "answer": "SAMPLE: Ang Database subjects ay kadalasang may programming/fundamentals na prerequisite. I-verify po sa curriculum checklist o sa Program Chair."
+    },
+    {
+      "id": "prereq_net",
+      "category": "Subjects",
+      "patterns": [
+        [
+          "prerequisite",
+          "networking"
+        ]
+      ],
+      "verified": false,
+      "answer": "SAMPLE: Ang Networking subjects ay may sariling prerequisite sa curriculum. I-verify po sa curriculum checklist o sa Program Chair."
+    },
+    {
+      "id": "prereq",
+      "category": "Subjects",
+      "patterns": [
+        [
+          "prerequisite"
+        ]
+      ],
+      "verified": false,
+      "answer": "Ang prerequisite ay subject na dapat ninyong mapasa bago kumuha ng susunod. Sabihin po ninyo kung anong subject (halimbawa: \"prerequisite ng programming\"), o tingnan ang inyong curriculum checklist."
+    },
+    {
+      "id": "curriculum",
+      "category": "Subjects",
+      "patterns": [
+        [
+          "curriculum"
+        ],
+        [
+          "subject",
+          "firstyear"
+        ],
+        [
+          "subject",
+          "secondyear"
+        ],
+        [
+          "subject",
+          "thirdyear"
+        ],
+        [
+          "subject",
+          "fourthyear"
+        ]
+      ],
+      "verified": false,
+      "answer": "Makikita po ang listahan ng subjects bawat year at semester sa inyong curriculum checklist (SAMPLE entry). Humingi po ng updated copy sa Department Office."
+    },
+    {
+      "id": "grade_pass",
+      "category": "Grading",
+      "patterns": [
+        [
+          "grade",
+          "passing"
+        ],
+        [
+          "passing"
+        ]
+      ],
+      "verified": false,
+      "answer": "Sa PUP, ang passing grade ay karaniwang 3.00 (SAMPLE, i-verify sa Student Handbook). Ang 5.00 ay failed."
+    },
+    {
+      "id": "grade_scale",
+      "category": "Grading",
+      "patterns": [
+        [
+          "grade",
+          "scale"
+        ],
+        [
+          "grade"
+        ]
+      ],
+      "verified": false,
+      "answer": "Gumagamit ang PUP ng numerical scale na 1.00 (pinakamataas) hanggang 5.00 (failed) (SAMPLE, i-verify sa Student Handbook). Ang mga espesyal na marka tulad ng INC at DRP ay may sariling rules."
+    },
+    {
+      "id": "grade_compute",
+      "category": "Grading",
+      "patterns": [
+        [
+          "grade",
+          "compute"
+        ],
+        [
+          "compute"
+        ]
+      ],
+      "verified": false,
+      "answer": "Ang GWA ay weighted average ng inyong grades base sa units ng bawat subject: (grade × units) ÷ total units (SAMPLE, i-verify ang official formula)."
+    },
+    {
+      "id": "inc",
+      "category": "Grading",
+      "patterns": [
+        [
+          "inc"
+        ]
+      ],
+      "verified": false,
+      "answer": "Ang INC (Incomplete) ay ibinibigay kapag kulang ang requirements. May palugit para ma-complete ito, ayon sa Student Handbook (SAMPLE entry). Makipag-usap po sa inyong instructor."
+    },
+    {
+      "id": "drop",
+      "category": "Grading",
+      "patterns": [
+        [
+          "drop"
+        ]
+      ],
+      "verified": false,
+      "answer": "Para mag-drop ng subject, kumuha ng dropping form, ipa-approve sa instructor at Program Chair, at ipasa sa Registrar bago ang deadline (SAMPLE entry, i-verify ang process)."
+    },
+    {
+      "id": "office_registrar",
+      "category": "Offices",
+      "patterns": [
+        [
+          "registrar"
+        ],
+        [
+          "registrar",
+          "hours"
+        ],
+        [
+          "registrar",
+          "office"
+        ]
+      ],
+      "verified": false,
+      "answer": "Ang Registrar's Office po ang humahawak ng enrollment records, grades, at documents. Office hours: [ILAGAY ANG APPROVED SCHEDULE]."
+    },
+    {
+      "id": "office_dean",
+      "category": "Offices",
+      "patterns": [
+        [
+          "dean"
+        ],
+        [
+          "dean",
+          "hours"
+        ],
+        [
+          "dean",
+          "office"
+        ]
+      ],
+      "verified": false,
+      "answer": "Ang Office of the Dean ay para sa college-level concerns at approvals. Office hours: [ILAGAY ANG APPROVED SCHEDULE]."
+    },
+    {
+      "id": "office_chair",
+      "category": "Offices",
+      "patterns": [
+        [
+          "chair"
+        ],
+        [
+          "chair",
+          "hours"
+        ],
+        [
+          "chair",
+          "office"
+        ]
+      ],
+      "verified": false,
+      "answer": "Ang Program/Department Chair ay makakatulong sa subjects, advising, at prerequisites. Office hours: [ILAGAY ANG APPROVED SCHEDULE]."
+    },
+    {
+      "id": "consult",
+      "category": "Offices",
+      "patterns": [
+        [
+          "consult"
+        ]
+      ],
+      "verified": false,
+      "answer": "May consultation hours ang bawat instructor. Magtanong po sa inyong subject instructor o sa Department Office para sa schedule (SAMPLE entry)."
+    },
+    {
+      "id": "office_hours",
+      "category": "Offices",
+      "patterns": [
+        [
+          "office",
+          "hours"
+        ],
+        [
+          "hours"
+        ],
+        [
+          "office"
+        ]
+      ],
+      "verified": false,
+      "answer": "Ang office hours po ay [ILAGAY ANG APPROVED SCHEDULE NG CAMPUS OFFICES]. Sabihin po kung anong office: Registrar, Dean, o Program Chair."
+    }
+  ],
+  "suggestions": [
+    {
+      "category": "Enrollment",
+      "icon": "📝",
+      "questions": [
+        "Paano mag-enroll?",
+        "Kailan ang deadline ng enrollment?",
+        "Ano ang requirements sa enrollment?",
+        "Nahuli ako mag-enroll, pwede pa ba?"
+      ]
+    },
+    {
+      "category": "Subjects",
+      "icon": "📚",
+      "questions": [
+        "Ano ang prerequisite ng programming?",
+        "Saan makikita ang curriculum checklist?",
+        "Prerequisite ng database?"
+      ]
+    },
+    {
+      "category": "Grading",
+      "icon": "🎓",
+      "questions": [
+        "Ano ang passing grade?",
+        "Paano i-compute ang GWA?",
+        "Ano ang ibig sabihin ng INC?",
+        "Paano mag-drop ng subject?"
+      ]
+    },
+    {
+      "category": "Offices",
+      "icon": "🏢",
+      "questions": [
+        "Anong oras bukas ang registrar?",
+        "Office hours ng program chair",
+        "Nasaan ang opisina ng dean?",
+        "Kailan ang consultation ng prof?"
+      ]
+    }
+  ]
+}

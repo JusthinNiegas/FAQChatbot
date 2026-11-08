@@ -1,0 +1,103 @@
+<!doctype html><html lang="tl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin · FAQ Manager</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/"><div class="logo">P</div><div>FAQ Manager</div></a>
+  <ul><li><a href="/">Chatbot</a></li><li><a class="admin" href="/admin/logout">Logout</a></li></ul>
+</div></nav>
+<main class="wrap" style="padding-top:24px">
+{% if default_password %}<div class="warn">⚠ Default password pa rin ang gamit. Palitan gamit ang <code>ADMIN_PASSWORD</code> environment variable bago i-deploy.</div>{% endif %}
+
+<div class="stats" id="stats"></div>
+
+<div class="two">
+  <div class="card">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px">
+      <h3 style="margin:0;flex:1">FAQ Entries (<span id="count">0</span>)</h3>
+      <input class="f" id="search" placeholder="Hanapin…" style="max-width:200px">
+      <button class="small-btn" onclick="newEntry()">+ Bago</button>
+    </div>
+    <div style="overflow-x:auto"><table><thead><tr><th>ID</th><th>Category</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+  </div>
+
+  <div>
+    <div class="card" id="formcard">
+      <h3 id="formtitle">Bagong entry</h3>
+      <label class="l">ID</label><input class="f" id="f_id" placeholder="hal. enroll_how">
+      <label class="l">Category</label><input class="f" id="f_cat" list="cats" placeholder="Enrollment">
+      <datalist id="cats"><option>Enrollment</option><option>Subjects</option><option>Grading</option><option>Offices</option><option>General</option></datalist>
+      <label class="l">Patterns (keyword matching)</label>
+      <input class="f" id="f_pat" placeholder="enroll+how, enroll+process">
+      <div class="hint">Ang <b>+</b> ay "at" (dapat nasa tanong ang lahat). Ang <b>kuwit</b> ay "o" (alinman sa mga pattern). Gamitin ang keywords gaya ng <code>enroll, how, when, grade, passing, drop, registrar…</code></div>
+      <label class="l">Answer</label><textarea class="f" id="f_ans" placeholder="Sagot ng chatbot (Taglish)…"></textarea>
+      <label class="l"><input type="checkbox" id="f_ver"> Verified na ng campus personnel</label>
+      <p style="display:flex;gap:8px;margin-bottom:0">
+        <button class="btn btn-gold" style="background:var(--maroon);color:#fff;padding:10px 20px" onclick="save()">Save</button>
+        <button class="small-btn" onclick="newEntry()">Clear</button>
+      </p>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Mga tanong na hindi nasagot</h3>
+      <p class="hint" style="margin-top:0">Gamitin ito para madagdagan ang FAQ.</p>
+      <ul id="fallbacks" style="padding-left:18px;margin:0"></ul>
+    </div>
+  </div>
+</div>
+</main>
+<div class="toast" id="toast"></div>
+<script>
+let entries = [];
+const $ = id => document.getElementById(id);
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+async function load(){
+  entries = await (await fetch("/admin/api/entries")).json();
+  render();
+  const s = await (await fetch("/admin/api/stats")).json();
+  $("stats").innerHTML = [
+    [s.total_questions,"Total na tanong"],[s.answered,"Nasagot"],[s.fallback_rate+"%","Fallback rate"],
+    [s.helpful_rate+"%","Helpful (👍) rate"],[s.unverified.length,"Unverified entries"]
+  ].map(([v,l])=>`<div class="card stat"><b>${v}</b><span>${l}</span></div>`).join("");
+  $("fallbacks").innerHTML = s.recent_fallbacks.length
+    ? s.recent_fallbacks.map(q=>`<li>${esc(q)}</li>`).join("") : "<li class='hint'>Wala pa.</li>";
+}
+function render(){
+  const term = $("search").value.toLowerCase();
+  const list = entries.filter(e => (e.id+e.category+e.answer).toLowerCase().includes(term));
+  $("count").textContent = list.length;
+  $("rows").innerHTML = list.map(e => `<tr>
+    <td><b>${esc(e.id)}</b><div class="hint">${esc(e.patterns.map(p=>p.join("+")).join(", "))}</div></td>
+    <td>${esc(e.category)}</td>
+    <td><span class="tag ${e.verified?'ok':'no'}">${e.verified?'verified':'sample'}</span></td>
+    <td style="white-space:nowrap"><button class="small-btn" onclick="edit('${e.id}')">Edit</button>
+    <button class="small-btn danger" onclick="del('${e.id}')">Delete</button></td></tr>`).join("");
+}
+function newEntry(){
+  $("formtitle").textContent="Bagong entry";
+  ["f_id","f_cat","f_pat","f_ans"].forEach(i=>$(i).value=""); $("f_ver").checked=false; $("f_id").disabled=false;
+}
+function edit(id){
+  const e = entries.find(x=>x.id===id);
+  $("formtitle").textContent="I-edit: "+id;
+  $("f_id").value=e.id; $("f_id").disabled=true; $("f_cat").value=e.category;
+  $("f_pat").value=e.patterns.map(p=>p.join("+")).join(", ");
+  $("f_ans").value=e.answer; $("f_ver").checked=!!e.verified;
+  $("formcard").scrollIntoView({behavior:"smooth"});
+}
+async function save(){
+  const body = {id:$("f_id").value, category:$("f_cat").value, patterns:$("f_pat").value,
+                answer:$("f_ans").value, verified:$("f_ver").checked};
+  const r = await fetch("/admin/api/entries",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  const d = await r.json();
+  if(!r.ok){toast(d.error||"May error.");return}
+  toast("Na-save at na-reload ang FAQ ✔"); newEntry(); load();
+}
+async function del(id){
+  if(!confirm("Burahin ang entry na '"+id+"'?")) return;
+  await fetch("/admin/api/entries/"+id,{method:"DELETE"}); toast("Nabura."); load();
+}
+$("search").addEventListener("input",render);
+load();
+</script></body></html>
